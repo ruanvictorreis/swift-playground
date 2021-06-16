@@ -1,8 +1,10 @@
 import UIKit
 
-// MARK: - Simple Bubble Sort
+// MARK: - Simple Bubble Sort O(nˆ2)
 
-func bubbleSort(arr: inout [Int]) -> [Int] {
+func bubbleSort(arr: [Int]) -> [Int] {
+    var arr = arr
+    
     for _ in 0..<arr.count {
         for j in 0..<arr.count - 1 {
             if arr[j] > arr[j+1] {
@@ -16,9 +18,11 @@ func bubbleSort(arr: inout [Int]) -> [Int] {
     return arr
 }
 
-// MARK: - Better Bubble Sort
+// MARK: - Better Bubble Sort O(nˆ2)
 
-func betterBubbleSort(arr: inout [Int]) -> [Int] {
+func betterBubbleSort(arr: [Int]) -> [Int] {
+    var arr = arr
+    
     for i in 0..<arr.count {
         for j in 0..<arr.count - i - 1 {
             if arr[j] > arr[j+1] {
@@ -32,9 +36,10 @@ func betterBubbleSort(arr: inout [Int]) -> [Int] {
     return arr
 }
 
-// MARK: - Examples
+// MARK: - Bubble Sort Examples
 
-var inputOne = [8, 9, 6, 0, 4, 5, 1, 3, 2, 7]
-var inputTwo = [8, 9, 6, 0, 4, 5, 1, 3, 2, 7]
-print(bubbleSort(arr: &inputOne))
-print(betterBubbleSort(arr: &inputTwo))
+let resultOne = bubbleSort(arr: [8, 9, 6, 0, 4, 5, 1, 3, 2, 7])
+print(resultOne)
+
+let resultTwo = betterBubbleSort(arr: [8, 9, 6, 0, 4, 5, 1, 3, 2, 7])
+print(resultTwo)
